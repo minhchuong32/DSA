@@ -1,0 +1,33 @@
+1. LinearSearch (Tìm kiếm tuyến tính):
+
+Độ phức tạp thời gian: O(n)
+Lý do:
+Thuật toán duyệt qua từng phần tử trong danh sách dữ liệu và so sánh với giá trị cần tìm.
+Trong trường hợp xấu nhất, giá trị cần tìm nằm ở phần tử cuối cùng của danh sách, dẫn đến việc so sánh với tất cả n phần tử.
+Do đó, độ phức tạp thời gian là O(n).
+Độ phức tạp không gian: O(1)
+Lý do: chỉ sử dụng một biến để lưu trữ giá trị cần tìm.
+2. BinarySearch (Tìm kiếm nhị phân):
+
+Độ phức tạp thời gian: O(log n)
+Lý do:
+Thuật toán áp dụng phương pháp "chia để trị" để tìm kiếm giá trị trong danh sách đã được sắp xếp.
+Mỗi bước chia, danh sách được chia thành hai phần bằng nhau.
+So sánh giá trị cần tìm với phần tử ở giữa danh sách.
+Loại bỏ một nửa danh sách không thể chứa giá trị cần tìm.
+Lặp lại quá trình chia và loại bỏ cho đến khi tìm thấy giá trị cần tìm hoặc danh sách rỗng.
+Số bước chia tối đa là log n (chia n lần cho đến khi được các phần tử đơn lẻ).
+Do đó, độ phức tạp thời gian là O(log n).
+Độ phức tạp không gian: O(1)
+Lý do: chỉ sử dụng một số biến để lưu trữ giá trị cần tìm, vị trí bắt đầu và kết thúc của danh sách.
+Bảng so sánh:
+
+Thuật toán	Độ phức tạp thời gian	Độ phức tạp không gian
+LinearSearch	O(n)	            O(1)
+BinarySearch	O(log n)	        O(1)
+Kết luận:
+
+BinarySearch có độ phức tạp thời gian nhanh hơn LinearSearch rất nhiều (log n so với n).
+Tuy nhiên, BinarySearch chỉ áp dụng được cho danh sách đã được sắp xếp.
+LinearSearch có thể áp dụng cho bất kỳ danh sách nào, nhưng có tốc độ chậm hơn.
+Lựa chọn thuật toán nào phù hợp sẽ phụ thuộc vào yêu cầu cụ thể của bài toán và đặc điểm của dữ liệu đầu vào.

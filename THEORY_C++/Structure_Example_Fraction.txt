@@ -1,0 +1,154 @@
+* Structure Example Fraction V1:
+#include <iostream>
+using namespace std;
+
+struct Fraction{
+    long num;    // numerator
+    long denom;  // denominator
+};
+
+long gcd(long a, long b);
+void reduce(Fraction &p);
+Fraction add(Fraction p, Fraction q);
+Fraction sub(Fraction p, Fraction q);
+void printFraction(Fraction p);
+
+int main() {
+    Fraction p = {4, 3};
+    cout << "p = "; 
+    printFraction(p);
+
+    cout << "q = "; 
+    Fraction q = {3, 5};
+    printFraction(q);
+
+    cout << "t = p + q = "; 
+    Fraction t = add(p, q);
+    printFraction(t);
+
+    cout << "s = p - q = ";
+    Fraction s = sub(p, q);
+    printFraction(s);
+}
+
+long gcd(long a, long b) {
+    int r;
+    while (b != 0) {
+        r = a % b;
+        a = b;
+        b = r;
+    }
+    return a;
+}
+
+void reduce(Fraction &p) {
+    long d = gcd(p.num, p.denom);
+    p.num /= d;
+    p.denom /= d;
+}
+
+Fraction add(Fraction p, Fraction q) {
+    Fraction s;
+    s.num = p.num * q.denom + p.denom * q.num;
+    s.denom = p.denom * q.denom;
+    
+    reduce(s);
+    return s;
+}
+
+Fraction sub(Fraction p, Fraction q) {
+    q.num = -q.num;
+    Fraction s = add(p, q);
+    reduce(s);
+    return s;
+}
+
+void printFraction(Fraction p) {
+    cout << p.num << "/" << p.denom << "\n";
+}
+
+
+
+
+
+* Structure Example Fraction V2:
+#include <iostream>
+#include <ostream>
+using namespace std;
+
+struct Fraction {
+    long num;    // numerator
+    long denom;  // denominator
+};
+
+long gcd(long a, long b);
+void reduce(Fraction &p);
+Fraction operator + (Fraction p, Fraction q);
+Fraction operator - (Fraction p, Fraction q);
+ostream& operator << (ostream& os, Fraction p);
+void printFraction(Fraction p);
+
+int main() {
+    Fraction p = {4, 3};
+    cout << "p = "; 
+    //printFraction(p);
+    cout << p; // <<(cout, p)
+
+    cout << "q = "; 
+    Fraction q = {3, 5};
+    //printFraction(q);
+    cout << q;
+
+    cout << "t = p + q = "; 
+    Fraction t = p + q;
+    //printFraction(t);
+    cout << t;
+
+    cout << "s = p - q = ";
+    Fraction s = p - q;
+    //printFraction(s);
+    cout << s;
+}
+
+long gcd(long a, long b) {
+    int r;
+    while (b != 0) {
+        r = a % b;
+        a = b;
+        b = r;
+    }
+    return a;
+}
+
+void reduce(Fraction &p) {
+    long d = gcd(p.num, p.denom);
+    p.num /= d;
+    p.denom /= d;
+}
+
+Fraction operator + (Fraction p, Fraction q) {
+    Fraction s;
+    s.num = p.num * q.denom + p.denom * q.num;
+    s.denom = p.denom * q.denom;
+    
+    reduce(s);
+    return s;
+}
+
+Fraction operator - (Fraction p, Fraction q) {
+    q.num = -q.num;
+    Fraction s = p + q;
+    reduce(s);
+    return s;
+}
+
+ostream& operator << (ostream& os, Fraction p) {
+    return os << p.num << "/" << p.denom << "\n";
+}
+
+void printFraction(Fraction p) {
+    cout << p.num << "/" << p.denom << "\n";
+}
+
+1
+

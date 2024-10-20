@@ -1,0 +1,52 @@
+
+Phân tích độ phức tạp của các thuật toán SelectionSort, MergeSort và QuickSort
+1. SelectionSort:
+
+Độ phức tạp thời gian: O(n^2)
+Lý do:
+Mỗi vòng lặp, thuật toán cần thực hiện n - 1 so sánh để tìm phần tử nhỏ nhất.
+Có n vòng lặp (lặp qua từng phần tử trong mảng).
+Tổng số so sánh: n * (n - 1) = n^2 - n = O(n^2).
+Độ phức tạp không gian: O(1)
+Lý do: chỉ sử dụng một số biến phụ để lưu trữ giá trị hiện tại và vị trí phần tử nhỏ nhất.
+2. MergeSort:
+
+Độ phức tạp thời gian: O(n log n)
+Lý do:
+Thuật toán sử dụng phương pháp "chia để trị" để sắp xếp mảng.
+Mỗi bước chia, mảng được chia thành hai phần bằng nhau.
+Sắp xếp từng phần con bằng phương pháp đệ quy.
+Gộp hai phần con đã sắp xếp thành một mảng sắp xếp.
+Số bước chia: log n (chia n lần cho đến khi được các phần tử đơn lẻ).
+Độ phức tạp thời gian của mỗi bước chia: O(n).
+Tổng độ phức tạp: O(n log n).
+Độ phức tạp không gian: O(n)
+Lý do: cần sử dụng mảng phụ để lưu trữ kết quả sắp xếp của từng phần con.
+3. QuickSort:
+
+Độ phức tạp thời gian:
+Trung bình: O(n log n)
+Trường hợp xấu nhất: O(n^2)
+Lý do:
+Giống như MergeSort, QuickSort sử dụng phương pháp "chia để trị".
+Tuy nhiên, cách chia mảng khác nhau.
+QuickSort chọn một phần tử làm "pivot" và chia mảng thành hai phần dựa trên pivot.
+Sắp xếp các phần tử nhỏ hơn pivot ở bên trái và các phần tử lớn hơn ở bên phải.
+Lặp lại quá trình chia và sắp xếp cho đến khi mảng được sắp xếp hoàn toàn.
+Trong trường hợp trung bình, QuickSort hoạt động hiệu quả và có độ phức tạp O(n log n).
+Tuy nhiên, trong trường hợp xấu nhất (ví dụ mảng đã được sắp xếp), QuickSort có thể hoạt động chậm hơn SelectionSort và MergeSort với độ phức tạp O(n^2).
+Độ phức tạp không gian: O(log n)
+Lý do: chỉ sử dụng một số biến phụ để lưu trữ vị trí pivot và các phần tử đang được so sánh.
+Bảng so sánh:
+
+Thuật toán	Độ phức tạp thời gian	Độ phức tạp không gian
+SelectionSort	O(n^2)	O(1)
+MergeSort	O(n log n)	O(n)
+QuickSort	O(n log n) (trung bình)	O(log n)
+QuickSort	O(n^2) (trường hợp xấu nhất)	O(log n)
+Kết luận:
+
+MergeSort có độ phức tạp thời gian và không gian ổn định nhất trong cả ba thuật toán.
+QuickSort có tốc độ trung bình nhanh hơn MergeSort, nhưng có thể hoạt động chậm hơn trong trường hợp xấu nhất.
+SelectionSort có độ phức tạp không gian thấp nhất, nhưng có tốc độ chậm nhất.
+Lựa chọn thuật toán nào phù hợp sẽ phụ thuộc vào yêu cầu cụ thể của bài toán và đặc điểm của dữ liệu đầu vào.

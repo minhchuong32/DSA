@@ -1,0 +1,50 @@
+Lan 1:
+So phep ghan: 78159375
+So phep so sanh: 34424672
+Thoi gian chay: 564 milliseconds
+-------------------------------------
+Lan 2:
+So phep ghan: 76714383
+So phep so sanh: 34976958
+Thoi gian chay: 494 milliseconds
+-------------------------------------
+Lan 3:
+So phep ghan: 75691062
+So phep so sanh: 34983181
+Thoi gian chay: 476 milliseconds
+-------------------------------------
+Lan 4:
+So phep ghan: 81053544
+So phep so sanh: 35454716
+Thoi gian chay: 489 milliseconds
+-------------------------------------
+Lan 5:
+So phep ghan: 77769105
+So phep so sanh: 35313487
+Thoi gian chay: 476 milliseconds
+-------------------------------------
+Lan 6:
+So phep ghan: 78210126
+So phep so sanh: 34980879
+Thoi gian chay: 475 milliseconds
+-------------------------------------
+Lan 7:
+So phep ghan: 79644249
+So phep so sanh: 35406203
+Thoi gian chay: 479 milliseconds
+-------------------------------------
+Lan 8:
+So phep ghan: 83113467
+So phep so sanh: 36969582
+Thoi gian chay: 494 milliseconds
+-------------------------------------
+Lan 9:
+So phep ghan: 79572177
+So phep so sanh: 35085225
+Thoi gian chay: 477 milliseconds
+-------------------------------------
+Lan 10:
+So phep ghan: 80407200
+So phep so sanh: 36387098
+Thoi gian chay: 481 milliseconds
+-------------------------------------

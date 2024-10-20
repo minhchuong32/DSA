@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "iostream": "cpp",
+        "array": "cpp",
+        "string_view": "cpp",
+        "scoped_allocator": "cpp",
+        "stacktrace": "cpp",
+        "ostream": "cpp",
+        "key": "c",
+        "random": "cpp"
+    }
+}
