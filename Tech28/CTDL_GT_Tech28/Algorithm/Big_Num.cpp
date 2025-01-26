@@ -1,9 +1,9 @@
 // #include <bits/stdc++.h>
 // using namespace std;
 // //tool compiler option  > seting > code generation > Language Standard > c++ 11
-// // tool > editor option> snipets > default source > code san form 
+// // tool > editor option> snipets > default source > code san form
 
-// //add 
+// //add
 // string addS(const string &n1, const string &n2)
 // {
 //     int i = n1.size() - 1, j = n2.size() - 1, carry = 0;
@@ -15,13 +15,151 @@
 //             sum += n1[i--] - '0';
 //         if (j >= 0)
 //         sum += n2[j--] - '0';
-//         result += sum % 10 + '0';
+//         result = (sum % 10 + '0') + result;
 //         carry = sum / 10;
 //     }
-//     reverse(result.begin(), result.end());
 //     return result;
 // }
 
+// * ADD
+// #include <iostream>
+
+// using namespace std;
+
+// int main()
+// {
+//     string so1, so2;
+//     cout << "Nhap so 1 va so 2: ";
+//     cin >> so1 >> so2;
+//     while(so1.size() < so2.size()) {
+//         so1 = '0' + so1;
+//     }
+//     while(so2.size() < so1.size()) {
+//         so2 = '0' + so2;
+//     }
+//     string result = "";
+//     int carry = 0;
+//     for (int i = so1.size() - 1; i >= 0; i--)
+//     {
+//         int sum = ((so1[i] - '0') + (so2[i] - '0')) + carry;
+//         if (sum >= 10)
+//         {
+//             carry = sum / 10;
+//             sum %= 10;
+//         }
+//         result = to_string(sum) + result;
+//     }
+//     cout << result;
+// }
+
+// * SUB
+// #include <iostream>
+// using namespace std;
+// int main()
+// {
+//     string so1, so2;
+//     cin >> so1 >> so2;
+    
+//     while (so1.size() < so2.size())
+//     {
+//         so1 = '0' + so1;
+//     }
+//     while (so2.size() < so1.size())
+//     {
+//         so2 = '0' + so2;
+//     }
+
+//     string result = "";
+//     int c = 0;
+
+//     string so01 = so1;
+//     string so02 = so2;
+//     bool negative = false;
+
+//     if ((so01[0] - '0' < so02[0] - '0' || (so01.size() < so02.size())))
+//     {
+//         negative = true;
+//         so2 = so01;
+//         so1 = so02;
+//     }
+//     else
+//     {
+//         so1 = so01;
+//         so2 = so02;
+//     }
+
+//     cout << so1 << ' ' << so2 << endl;
+//     for (int i = so1.size() - 1; i >= 0; i--)
+//     {
+//         int sub = ((so1[i] - '0') - (so2[i] - '0')) - c;
+//         c = 0;
+//         if (sub < 0)
+//         {
+//             sub = 10 + sub;
+//             c = 1;
+//         }
+//         result = to_string(sub) + result;
+//     }
+//     while (result[0] == '0')
+//     {
+//         result = result.substr(1);
+//     }
+//     if (negative)
+//         result = "-" + result;
+
+
+//     cout << result;
+// }
+// 48956723 999685325
+// 91823731092381092328471611298123 1928312737213727391238801238338273127712
+// 1928312737213727391238801238338273127712 0000000091823731092381092328471611298123
+// -1928312645389996298857708909866661829589
+
+
+// * MUL 
+#include <iostream>
+using namespace std;
+
+string add(string so1, string so2) {
+    cin >> so1 >> so2;
+    while(so1.size() < so2.size()) {
+        so1 = '0' + so1;
+    }
+    while(so2.size() < so1.size()) {
+        so2 = '0' + so2;
+    }
+    string result = "";
+    int carry = 0;
+    for (int i = so1.size() - 1; i >= 0; i--)
+    {
+        int sum = ((so1[i] - '0') + (so2[i] - '0')) + carry;
+        if (sum >= 10)
+        {
+            carry = sum / 10;
+            sum %= 10;
+        }
+        result = to_string(sum) + result;
+    }
+    return result;
+}
+
+int main() {
+    string num1, num2;
+    cin>>num1, num2;
+    string result = "";
+    for (int i=num2.size()-1;i>=0;i--) {
+        string mul = "";
+        int c = 0;
+        for (int j=num1.size()-1;j>=0;j--) {
+            int res = (num2[i]-'0' * num1[j]-'0') + c;
+            c=0;
+            if (res >= 10) c = 1;
+            mul = to_string(res) + mul;
+        }
+        mul += '0';
+        result = add(result, mul);
+    }
+}
 // string subS(const string &n1, const string &n2)
 // {
 //     int i = n1.size() - 1, j = n2.size() - 1, borrow = 0;
@@ -84,7 +222,7 @@
 //     return result;
 // }
 
-// //mul 
+// //mul
 // string mulS(const string &n1, const string &n2)
 // {
 //     int len1 = n1.size();
@@ -140,7 +278,7 @@
 // {
 //     if (n2 == "0")
 //         throw invalid_argument("Division by zero");
-//         // qu: ket qua , re:du 
+//         // qu: ket qua , re:du
 //     string qu, re = "0";
 //     for (char digit : n1)
 //     {
@@ -179,7 +317,7 @@
 //     return qu;
 // }
 
-// //mod 
+// //mod
 // string mod(const string &a, const string &b)
 // {
 //     bool A_am = (a[0] == '-');
@@ -195,7 +333,7 @@
 //     return re;
 // }
 
-// // sub 
+// // sub
 // string sub(const string &a, const string &b) {
 //     bool A_am = (a[0] == '-');
 //     bool B_am = (b[0] == '-');
@@ -203,7 +341,7 @@
 //     string n2 = B_am ? b.substr(1) : b;
 //     string result;
 //     if (A_am && B_am) {
-//         if (cmpS(n1, n2) > 0) { result = subS(n1, n2);result = "-" + result; }
+//         if (cmpS(n1, n2) > 0) { result =  (n1, n2);result = "-" + result; }
 //          else result = subS(n2, n1);
 //     } else if (!A_am && B_am) { result = addS(n1, n2);
 //     } else if (A_am && !B_am) {result = addS(n1, n2); result = "-" + result;
@@ -214,7 +352,6 @@
 //      while (result.size() > 1 && result[0]=='0') result.erase(0,1);
 //     if (result == "-0") result = "0"; return result;
 // }
-
 
 // int main(){
 //     string a,b; cin>>a>>b;

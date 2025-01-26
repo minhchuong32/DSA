@@ -33,7 +33,7 @@
 //     cin>>x;
 //     if(x>m || x>n) cout <<"nhap lai: ";
 //     else {
-//         UserPlay;
+//         UserPlay();
 //     }
 //     n-=x;
 // }
